@@ -30,6 +30,14 @@ builder.Services.AddLogging();
 builder.Services.AddSingleton<ILiteDatabase>(sp =>
 {
     var connectionString = builder.Configuration.GetConnectionString("LiteDB") ?? "Filename=Data/courses.db;Mode=Shared";
+    
+    // Ensure the Data directory exists
+    var dataDirectory = Path.Combine(Directory.GetCurrentDirectory(), "Data");
+    if (!Directory.Exists(dataDirectory))
+    {
+        Directory.CreateDirectory(dataDirectory);
+    }
+
     var db = new LiteDatabase(connectionString);
     
     // Ensure the 'courses' collection exists
