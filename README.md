@@ -16,7 +16,7 @@ CourseManagementAPI is a .NET Core application that provides functionality for m
 
 1. Clone the repository:
    ```
-   git clone https://github.com/yourusername/CourseManagementAPI.git
+   git clone https://github.com/drew12341/CourseManagementAPI.git
    cd CourseManagementAPI
    ```
 
