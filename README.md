@@ -9,9 +9,8 @@ CourseManagementAPI is a .NET Core application that provides functionality for m
 - Retrieve the top 5 recently added courses, ordered by title
 
 ## Prerequisites
+- .NET 9.0 SDK
 
-- .NET 8.0 SDK or later
-- Visual Studio 2022 or Visual Studio Code
 
 ## Building and Running the Project
 
@@ -32,6 +31,8 @@ CourseManagementAPI is a .NET Core application that provides functionality for m
    ```
 
 The API will start running on `https://localhost:7052` and `http://localhost:5291` by default. These ports can be configured in the `Properties/launchSettings.json` file.
+
+Note: On first run, the application will automatically create the LiteDB database file in the `Data` folder. No additional setup is required for the database.
 
 ## API Endpoints
 
