@@ -30,7 +30,12 @@ builder.Services.AddLogging();
 builder.Services.AddSingleton<ILiteDatabase>(sp =>
 {
     var connectionString = builder.Configuration.GetConnectionString("LiteDB") ?? "Filename=Data/courses.db;Mode=Shared";
-    return new LiteDatabase(connectionString);
+    var db = new LiteDatabase(connectionString);
+    
+    // Ensure the 'courses' collection exists
+    var collection = db.GetCollection<Course>("courses");
+    
+    return db;
 });
 
 builder.Services.AddScoped<ILiteCollection<Course>>(sp =>
